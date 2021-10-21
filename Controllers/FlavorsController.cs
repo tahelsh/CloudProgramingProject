@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
+using Firebase.Storage;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +11,7 @@ using project.Models;
 
 namespace project.Controllers
 {
+    //gs://icecreamproject-fe3f1.appspot.com
     public class FlavorsController : Controller
     {
         private readonly FlavorsContext _context;
@@ -61,6 +64,7 @@ namespace project.Controllers
                 bool result = img.CheckImage(flavors.Image_URL);//check if the img contain ice cream
                 if (result)
                 {
+                    FirebaseImgAsync(flavors.Image_URL, flavors.Name);
                     _context.Add(flavors);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
@@ -70,6 +74,17 @@ namespace project.Controllers
             return View(flavors);
 
         }
+        public async void FirebaseImgAsync(string webUrl, string name)
+        {
+            WebClient client = new WebClient();
+            string path = @"D:\Images\" + name + ".jpg";//איפה התמונה תישמר במחשב 
+            client.DownloadFile(webUrl, path);//Download img to computer in the path 
+            var stream = System.IO.File.Open(path, System.IO.FileMode.Open);
+            var task = new FirebaseStorage("icecreamproject-fe3f1.appspot.com").Child(name + ".jpg").PutAsync(stream);
+            var url = await task;
+
+        }
+
 
         // GET: Flavors/Edit/5
         public async Task<IActionResult> Edit(int? id)

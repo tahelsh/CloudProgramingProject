@@ -20,8 +20,10 @@ namespace project
          */
         public bool CheckImage(string imgURL)
         {// Checks if the image contains ice with a confidence of more than fifty
-            string apiKey = "acc_91c1a8d7ff8abfb";
-            string apiSecret = "1157dc63e93aedbfa7275adbfcb9a0a7";
+            //string apiKey = "acc_91c1a8d7ff8abfb";
+            //string apiSecret = "1157dc63e93aedbfa7275adbfcb9a0a7";
+            string apiKey = "acc_10b70e980926bdf";
+            string apiSecret = "c6a796f97ab96d56dbdf242ce654063e";
             string basicAuthValue = System.Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(String.Format("{0}:{1}", apiKey, apiSecret)));
             var client = new RestClient("https://api.imagga.com/v2/tags");
             client.Timeout = -1;
