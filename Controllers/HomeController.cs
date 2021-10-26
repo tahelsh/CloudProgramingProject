@@ -12,10 +12,12 @@ namespace project.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly UsersContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, UsersContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -50,5 +52,34 @@ namespace project.Controllers
         {
             return View();
         }
+        public IActionResult LogIn()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> LogIn([Bind("UserName,Password")] User users)
+        {
+            bool flag = false;
+            if (ModelState.IsValid)
+            {
+                foreach (var user in _context.User)
+                {
+                    if (user.UserName == users.UserName && user.Password == users.Password)
+                    {
+                        ViewBag.text = "true";
+                        flag = true;
+                        return View("~/Views/Home/UserHome.cshtml");
+                    }
+                }
+                if (flag == false)
+                    ViewBag.text = "false";
+            }
+            return View();
+            //return null;//איך מודיעים על שגיאה?
+            //sessionStorage.isMeneger = true;
+        }
+
     }
 }

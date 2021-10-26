@@ -30,6 +30,9 @@ namespace project
 
             services.AddDbContext<FlavorsContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("FlavorsContext")));
+
+            services.AddDbContext<UsersContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("UsersContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

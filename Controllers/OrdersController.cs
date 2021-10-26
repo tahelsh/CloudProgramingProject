@@ -83,8 +83,10 @@ namespace project.Controllers
                 }
                 //else -להודיע על שגיאה
             }
-           // return View(order);
+            // return View(order);
 
+            //return View(order);
+            ViewBag.Message = _context2.Flavors.ToList();//for combo box of flavors in the window
             return View(order);
         }
         public bool checkStreet(string City, string Street)

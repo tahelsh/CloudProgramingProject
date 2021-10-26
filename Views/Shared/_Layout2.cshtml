@@ -1,12 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-@*<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - project</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
-</head>*@
+
 
 <head>
     <!-- Basic -->
@@ -52,22 +46,6 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
                         <ul class="navbar-nav  ">
-                            @*<li class="nav-item">
-            <a class="nav-link" href="~/index.html">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="~/about.html"> About</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="~/icecream.html"> Icecreams </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="~/blog.html"> Blog </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="~/contact.html">Contact Us</a>
-        </li>*@
-
                             <li class="nav-item">
                                 <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
                             </li>
@@ -84,10 +62,13 @@
                                 <a class="nav-link" asp-controller="Home" asp-action="Contant">Contact Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Orders" asp-action="create">Create oreder</a>
+                                <a class="nav-link" asp-controller="Orders" asp-action="Index">Orders</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Home" asp-action="LogIn">Log In</a>
+                                <a class="nav-link" asp-controller="Flavors" asp-action="Index">Flavors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Users" asp-action="Index">Users</a>
                             </li>
                         </ul>
 
@@ -208,3 +189,4 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
