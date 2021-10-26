@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using project.Models;
+//using MassageBox;
 
 namespace project.Controllers
 {
@@ -58,12 +59,6 @@ namespace project.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,PhoneNumber,Email,Street,City,HouseNumber,IceCream,Date,FeelsLike,Humidity,Pressure")] Order order)
         {
-            //if (ModelState.IsValid)
-            //{
-            //    _context.Add(order);
-            //    await _context.SaveChangesAsync();
-            //    return RedirectToAction(nameof(Index));
-            //}
             if (ModelState.IsValid)
             {
                 bool flag = checkStreet(order.City, order.Street);
@@ -79,15 +74,18 @@ namespace project.Controllers
                     order.Date = date;
                     _context.Add(order);
                     await _context.SaveChangesAsync();
-                    return RedirectToAction(nameof(Index));
+                    //return RedirectToAction(nameof(Index));
                 }
-                //else -להודיע על שגיאה
-            }
-            // return View(order);
-
+                else //-להודיע על שגיאה
+                { 
+                    ViewBag.Message = _context2.Flavors.ToList();//for combo box of flavors in the window
+                    ViewBag.Data = string.Format("The address is not correct", order.Street, order.HouseNumber, order.City);
+                    return View();
+                }
+                }
+            //ViewBag.Message = _context2.Flavors.ToList();//for combo box of flavors in the window
+            return View("~/Views/Home/Index.cshtml");
             //return View(order);
-            ViewBag.Message = _context2.Flavors.ToList();//for combo box of flavors in the window
-            return View(order);
         }
         public bool checkStreet(string City, string Street)
         {

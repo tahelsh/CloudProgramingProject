@@ -70,7 +70,7 @@ namespace project.Controllers
                     {
                         ViewBag.text = "true";
                         flag = true;
-                        return View("~/Views/Home/UserHome.cshtml");
+                        return View("~/Views/UserHome/Index.cshtml",user);
                     }
                 }
                 if (flag == false)
