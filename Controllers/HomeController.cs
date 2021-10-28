@@ -57,9 +57,10 @@ namespace project.Controllers
             return View();
         }
 
+        //async Task<IActionResult>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> LogIn([Bind("UserName,Password")] User users)
+        public ViewResult LogIn([Bind("UserName,Password")] User users)
         {
             bool flag = false;
             if (ModelState.IsValid)

@@ -79,7 +79,7 @@ namespace project.Controllers
                 else //-להודיע על שגיאה
                 { 
                     ViewBag.Message = _context2.Flavors.ToList();//for combo box of flavors in the window
-                    ViewBag.Data = string.Format("The address is not correct", order.Street, order.HouseNumber, order.City);
+                    ViewBag.Data = string.Format("The address is not correct");
                     return View();
                 }
                 }

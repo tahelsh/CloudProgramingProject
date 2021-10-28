@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using project.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,27 @@ namespace project.Controllers
         { 
             return View();
         }
+
+        public IActionResult Prediction()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ViewResult Prediction([Bind("city,  season,  feelslike,  humidity,  weekday")] BigML pred)
+        {
+            if (pred.humidity == null && pred.feelslike == null)
+                ViewBag.text = "";
+            else
+            {
+                string ans = BigML.Icecream.PredictIcecream(pred.city, pred.season, pred.feelslike, pred.humidity, pred.weekday);
+
+                ViewBag.text = "the prediction is " + ans;
+            }
+            return View();
+
+        }
+
     }
 }
