@@ -16,7 +16,7 @@ namespace project.Controllers
 
         public IActionResult Prediction()
         {
-            return View();
+            return View("~/Views/UserHome/PredictionBigML.cshtml");
         }
 
         [HttpPost]
@@ -31,7 +31,7 @@ namespace project.Controllers
 
                 ViewBag.text = "the prediction is " + ans;
             }
-            return View();
+            return View("~/Views/UserHome/PredictionBigML.cshtml");
 
         }
 

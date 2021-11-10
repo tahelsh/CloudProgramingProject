@@ -5,11 +5,16 @@
 @{
     ViewData["Title"] = "UserHome";
     Layout = "~/Views/Shared/_Layout2.cshtml";
+
+    //if (StaticFields.IsUser)
+    //    Layout = "~/Views/Shared/_Layout2.cshtml";
+    //else
+    //    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Hello @Html.DisplayFor(model => model.UserName) </h1>
+@*<h1>Hello @Html.DisplayFor(model => model.UserName) </h1>*@
 
-
+<h1>Hello @StaticFields.UserName</h1>
 <form asp-controller="Home" asp-action="Index">
     <input type="submit" value="Log Out"  class="btn btn-danger" > 
 </form>

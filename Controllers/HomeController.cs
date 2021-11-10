@@ -71,6 +71,8 @@ namespace project.Controllers
                     {
                         ViewBag.text = "true";
                         flag = true;
+                        StaticFields.UserName = user.UserName;
+                        StaticFields.IsUser = true;
                         return View("~/Views/UserHome/Index.cshtml",user);
                     }
                 }

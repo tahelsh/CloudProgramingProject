@@ -188,5 +188,29 @@ namespace project.Controllers
         {
             return _context.Order.Any(e => e.Id == id);
         }
+
+        public IActionResult ShowGraph(DateTime date1, DateTime date2)
+        {
+            int counter = 1;
+            List<Temperature> temps = new List<Temperature>();
+            for (DateTime i = date1; i < date2; i = i.AddDays(1))//לבדוק שהדייט הראשון קטן מהשני!!!
+            {
+                Temperature t = new Temperature { Id = counter++, Day = i.Day, Month = i.Month, TempValue = 0 };
+
+                foreach (var item in _context.Order)
+                {
+                    if (item.Date.Day == i.Day && item.Date.Month == i.Month)
+                        t.TempValue++;//the number of orders in this date
+                }
+                temps.Add(t);
+
+            }
+            return View(temps);
+        }
+
+        public IActionResult Graph()
+        {
+            return View();
+        }
     }
 }
