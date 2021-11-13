@@ -3,6 +3,11 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout2.cshtml";
+
+    if (StaticFields.IsUser)
+        Layout = "~/Views/Shared/_Layout2.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Index</h1>
@@ -14,10 +19,13 @@
     <thead>
         <tr>
             <th>
+                
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
+           
                 @Html.DisplayNameFor(model => model.PhoneNumber)
+ 
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Email)
@@ -53,15 +61,20 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+                <img src="~/images/user.png" width="14" height="14">
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
+                <img src="~/images/phone.png" width="14" height="14">
                 @Html.DisplayFor(modelItem => item.PhoneNumber)
+
             </td>
             <td>
+                <img src="~/images/mail.png" width="14" height="14">
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
+                <img src="~/images/location.png" width="14" height="14">
                 @Html.DisplayFor(modelItem => item.Street)
             </td>
             <td>
@@ -71,6 +84,7 @@
                 @Html.DisplayFor(modelItem => item.HouseNumber)
             </td>
             <td>
+                <img src="~/images/icecream2.png" width="20" height="27">
                 @Html.DisplayFor(modelItem => item.IceCream)
             </td>
             <td>

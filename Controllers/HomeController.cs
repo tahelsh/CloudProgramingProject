@@ -13,11 +13,13 @@ namespace project.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly UsersContext _context;
+        private readonly FlavorsContext _context2;
 
-        public HomeController(ILogger<HomeController> logger, UsersContext context)
+        public HomeController(ILogger<HomeController> logger, UsersContext context, FlavorsContext context2)
         {
             _logger = logger;
             _context = context;
+            _context2 = context2;
         }
 
         public IActionResult Index()
@@ -50,6 +52,11 @@ namespace project.Controllers
         }
         public IActionResult Icecreams()
         {
+            ViewBag.Message = _context2.Flavors.ToList();//for combo box of flavors in the window
+            return View();
+        }
+        public IActionResult UserHome()
+        {
             return View();
         }
         public IActionResult LogIn()
@@ -73,7 +80,7 @@ namespace project.Controllers
                         flag = true;
                         StaticFields.UserName = user.UserName;
                         StaticFields.IsUser = true;
-                        return View("~/Views/UserHome/Index.cshtml",user);
+                        return View("~/Views/Home/UserHome.cshtml");
                     }
                 }
                 if (flag == false)
@@ -82,6 +89,33 @@ namespace project.Controllers
             return View();
             //return null;//איך מודיעים על שגיאה?
             //sessionStorage.isMeneger = true;
+        }
+
+        public IActionResult LogOut()
+        {
+            StaticFields.IsUser = false;
+            return View("~/Views/Home/Index.cshtml");
+        }
+
+        public IActionResult Prediction()
+        {
+            return View("~/Views/Home/PredictionBigML.cshtml");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ViewResult Prediction([Bind("city,  season,  feelslike,  humidity,  weekday")] BigML pred)
+        {
+            if (pred.humidity == null && pred.feelslike == null)
+                ViewBag.text = "";
+            else
+            {
+                string ans = BigML.Icecream.PredictIcecream(pred.city, pred.season, pred.feelslike, pred.humidity, pred.weekday);
+
+                ViewBag.text = "the prediction is " + ans;
+            }
+            return View("~/Views/Home/PredictionBigML.cshtml");
+
         }
 
     }

@@ -1,5 +1,10 @@
 ﻿@{
     ViewData["Title"] = "Privacy Policy";
+
+    if (StaticFields.IsUser)
+        Layout = "~/Views/Shared/_Layout2.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h1>@ViewData["Title"]</h1>
 

@@ -3,6 +3,11 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout2.cshtml";
+
+    if (StaticFields.IsUser)
+        Layout = "~/Views/Shared/_Layout2.cshtml";
+    else
+        Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Index</h1>
@@ -26,6 +31,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+                <img src="~/images/user.png" width="14" height="14">
                 @Html.DisplayFor(modelItem => item.UserName)
             </td>
             <td>
