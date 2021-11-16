@@ -8,9 +8,29 @@
     else
         Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/Home.css" />
+</head>
 
-<h1>Hello @StaticFields.UserName</h1>
-<form asp-controller="Home" asp-action="LogOut">
-    <input type="submit" value="Log Out" class="btn btn-danger">
-</form>
+<section class="blog_section layout_padding">
+    <div class="container">
+        <div class="heading_container">
+            @*<div class="homeUser_text">*@
+                
+                <h2>
+                    <span>
+                        Hello @StaticFields.UserName
+                    </span>
+                </h2>
+            @*</div>*@
+        </div>
+        <p style="font-family:'Guttman Rashi'; font-size:25px">
+            Welcome to the users area of the new whipped cream website.<br>
+            Here you can add to the site everything you want, new flavors especially for our customers,<br>
+            changing details of existing flavors, promotions, orders placed, watching the prediction of <br>
+            buying ice cream and a sales graph.<br>
+            So come on let's get started ;)
+        </p>
+    </div>
+</section>
 

@@ -9,52 +9,93 @@
     else
         Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/Home.css" />
+</head>
 
-<h1>Flavors</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Image_URL)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                <img src="~/images/icecream2.png" width="20" height="27">
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                <img src="@Html.DisplayFor(modelItem => item.Image_URL)" style="width:80px; height:80px">   
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<body class="sub_page">
+
+    <!-- our ice cream section -->
+    <section class="our_section layout_padding">
+        <div class="container">
+            <div class="heading_container">
+                <h2>
+                    <span>
+                        Our ice cream
+                    </span>
+                </h2>
+            </div>
+            
+            <div class="our_container">
+
+                @*<div class="quote_btn-container ">
+            <a asp-action="Create">Create New</a>
+        </div>*@
+                <a asp-action="Create">
+                    <img src="~/images/create_New.png" width="90" height="80" >
+                </a>
+
+                @foreach (var item in Model)
+                {
+
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="@item.Image_URL" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                @item.Name
+                            </h5>
+                            <p>
+                                @item.Description
+                            </p>
+                            <a asp-controller="Flavors" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                            <a asp-controller="Flavors" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                            <a asp-controller="Flavors" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        </div>
+                    </div>
+                }
+                @*<div class="box">
+            <div class="img-box">
+                <img src="~/images/ice-2.png" alt="">
+            </div>
+            <div class="detail-box">
+                <h5>
+                    Mix Ice Cream
+                </h5>
+                <p>
+                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    veniam, quis nostrud
+                </p>
+                <a href="">
+                    See More
+                </a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="~/images/ice-3.png" alt="">
+            </div>
+            <div class="detail-box">
+                <h5>
+                    Fruit Ice Cream
+                </h5>
+                <p>
+                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    veniam, quis nostrud
+                </p>
+                <a href="">
+                    See More
+                </a>
+            </div>
+        </div>*@
+            </div>
+            </div>
+    </section>
+    <!-- end our ice cream section -->
+
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+</body>

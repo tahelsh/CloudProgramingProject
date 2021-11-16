@@ -35,7 +35,7 @@
             <nav class="navbar navbar-expand-lg custom_nav-container ">
                 <a class="navbar-brand" href="index.html">
                     <span>
-                        Joice
+                        Katzefet
                     </span>
                 </a>
                 </a>
@@ -68,13 +68,10 @@
                         </ul>
 
                     </div>
-                    <div class="quote_btn-container ">
-                        <a href="">
-                            <img src="images/user.png" alt="">
-                        </a>
-                        <form class="form-inline">
-                            <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-                        </form>
+                    <div class="quote_btn-container ">     
+                      <form asp-controller="Home" asp-action="LogOut">
+                         <input type="submit" value="Log Out" class="btn btn-danger">
+                       </form>
                     </div>
                 </div>
             </nav>

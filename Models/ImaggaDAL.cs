@@ -39,12 +39,16 @@ namespace project
         {//convert from JSON file to list of tagd ->pairs of (tag,confidence)
             List<Tag> Result = new List<Tag>();
             Root TheTags = JsonConvert.DeserializeObject<Root>(response);
+            if (TheTags.result == null)
+                return null;
             foreach (var item in TheTags.result.tags)
                 Result.Add(new Tag(item.tag, item.confidence));
             return Result;
         }
         public bool isIceCream(List<Tag> listResults)
-        { //return true if the image contains ice with a confidence of more than fifty         
+        { //return true if the image contains ice with a confidence of more than fifty
+            if (listResults == null)
+                return false;
             for (int i = 0; i < listResults.Count; i++)
                 if ((listResults[i].tag.en == "ice" || listResults[i].tag.en == "ice cream" || listResults[i].tag.en == "frozen dessert")
                     && listResults[i].confidence > 50)

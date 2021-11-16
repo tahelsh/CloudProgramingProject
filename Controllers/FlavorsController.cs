@@ -62,6 +62,7 @@ namespace project.Controllers
             {
                 ImaggaDAL img = new ImaggaDAL();
                 bool result = img.CheckImage(flavors.Image_URL);//check if the img contain ice cream
+                //bool result = true;
                 if (result)
                 {
                     FirebaseImgAsync(flavors.Image_URL, flavors.Name);
@@ -70,6 +71,11 @@ namespace project.Controllers
                     return RedirectToAction(nameof(Index));
                 }
                 //צריך להודיע על שגיאה שהתמונה לא נכונה
+                else
+                {
+                    ViewBag.Data = string.Format("The Image_URL is not correct");
+                    return View();
+                }
             }
             return View(flavors);
 

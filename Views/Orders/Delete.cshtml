@@ -9,13 +9,27 @@
     else
         Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/Home.css" />
+</head>
 
-<h1>Delete</h1>
+<section class="contact_section layout_padding">
+    <div class="container">
+        <div class="heading_container">
+            <div class="row">
+                <h2>
+                    <span>
+                        Delete
+                    </span>
+                </h2>
+            </div>
+        </div>
+
+    </div>
+</section>
 
 <h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Order</h4>
-    <hr />
+<div style="font-size:20px">
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Name)

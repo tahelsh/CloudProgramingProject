@@ -62,6 +62,7 @@ namespace project.Controllers
             if (ModelState.IsValid)
             {
                 bool flag = checkStreet(order.City, order.Street);
+                //bool flag = true;
                 if (flag)
                 {
                     //enter weather details
@@ -84,6 +85,7 @@ namespace project.Controllers
                 }
                 }
             //ViewBag.Message = _context2.Flavors.ToList();//for combo box of flavors in the window
+            
             return View("~/Views/Home/Index.cshtml");
             //return View(order);
         }

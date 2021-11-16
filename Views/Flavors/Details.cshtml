@@ -9,12 +9,25 @@
     else
         Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/Home.css" />
+</head>
+<section class="contact_section layout_padding">
+    <div class="container">
+        <div class="heading_container">
+            <div class="row">
+                <h2>
+                    <span>
+                        Details
+                    </span>
+                </h2>
+            </div>
+        </div>
 
-<h1>Details</h1>
+    </div>
+</section>
 
-<div>
-    <h4>Flavors</h4>
-    <hr />
+<div style="font-size:20px">
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
@@ -42,7 +55,12 @@
         </dd>
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+@{ 
+    if (StaticFields.IsUser)
+    {
+        <div>
+            <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    }
+ }

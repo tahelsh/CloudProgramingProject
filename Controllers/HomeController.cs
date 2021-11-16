@@ -112,7 +112,7 @@ namespace project.Controllers
             {
                 string ans = BigML.Icecream.PredictIcecream(pred.city, pred.season, pred.feelslike, pred.humidity, pred.weekday);
 
-                ViewBag.text = "the prediction is " + ans;
+                ViewBag.text = "The prediction is " + ans;
             }
             return View("~/Views/Home/PredictionBigML.cshtml");
 

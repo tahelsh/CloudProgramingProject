@@ -9,11 +9,25 @@
     else
         Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/Home.css" />
+</head>
 
-<h1>Edit</h1>
+<section class="contact_section layout_padding">
+    <div class="container">
+        <div class="heading_container">
+            <div class="row">
+                <h2>
+                    <span>
+                        Edit
+                    </span>
+                </h2>
+            </div>
+        </div>
 
-<h4>Order</h4>
-<hr />
+    </div>
+</section>
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
@@ -75,7 +89,7 @@
                 <span asp-validation-for="Pressure" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Save" style="background-color: #ad927e" class="btn btn-primary" />
             </div>
         </form>
     </div>

@@ -7,7 +7,486 @@
         Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Joice</title>
+
+    <!-- slider stylesheet -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="~/css/bootstrap.css" />
+
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Raleway:400,500,700&display=swap" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="~/css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="~/css/responsive.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/css/Home.css" />
+</head>
+
+<div>
+
+    <div class="hero_area">
+        <section class=" slider_section position-relative">
+            @*<a href="" class="btn-img">
+                <img src="images/btn-img.png" alt="">
+            </a>*@
+
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <!--<div class="slider_number-container ">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">01</li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1">02</li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2">03</li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3">04</li>
+        </ol>-->
+                @*<div class="number-box">
+            <span>
+                /02
+            </span>
+        </div>*@
+                <!--</div>-->
+
+
+                <div class="carousel-inner">
+                    @*תצוגה 1*@
+                    <div class="carousel-item">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-4 offset-lg-2 col-md-5 offset-md-1">
+                                    <div class="detail_box">
+                                        @*<div class="heading_container">*@
+                                            <h1 style="font-family: Constantia">
+                                                All the <br>
+                                                falvors <br>
+                                                are in 50% <br>
+                                            </h1>
+                                        @*</div>*@
+                                        <p style="font-family:'Guttman Rashi'; font-size:25px">
+                                            Special for the summer a whole world of flavors that will turn you into a good day ;)
+                                        </p>
+                                        <div>
+                                            <a asp-controller="Orders" asp-action="Create">Buy Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="img-box">
+                                        <img src="~/images/icehands2.png" alt="" >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*תצוגה 2*@
+                    <div class="carousel-item active">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-4 offset-lg-2 col-md-5 offset-md-1">
+                                    <div class="detail_box">
+                                        <h1 style="font-family:Constantia">
+                                            Welcome  <br>
+                                            To Our <br>
+                                            New Website <br>
+                                        </h1>
+                                        <p style="font-family:'Guttman Rashi'; font-size:25px">
+                                            A whole world of flavors that will turn you into a dream day every day!
+                                        </p >
+                                        <div>
+                                            <a asp-controller="Orders" asp-action="Create">Buy Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="img-box">
+                                        <img src="~/images/photo_new.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*תצוגה 3*@
+                    @*<div class="carousel-item ">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-4 offset-lg-2 col-md-5 offset-md-1">
+                            <div class="detail_box">
+                                <h1>
+                                    Ice <br>
+                                    Cream <br>
+                                    Shop
+                                </h1>
+                                <p>
+                                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                    labore et dolore magna aliqua
+                                </p>
+                                <div>
+                                    <a href="">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="img-box">
+                                <img src="images/slider-img.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+                    @*תצוגה 4*@
+                    @*<div class="carousel-item ">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-4 offset-lg-2 col-md-5 offset-md-1">
+                            <div class="detail_box">
+                                <h1>
+                                    Ice <br>
+                                    Cream <br>
+                                    Shop
+                                </h1>
+                                <p>
+                                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                    labore et dolore magna aliqua
+                                </p>
+                                <div>
+                                    <a href="">Buy Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="img-box">
+                                <img src="images/slider-img.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+                </div>
+                <div class="carousel_btn-container">
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- end slider section -->
+    </div>
+
+
+    <!-- about section -->
+    <section class="about_section layout_padding">
+        <div class="container">
+            <div class="about_container">
+                <div class="row">
+                    <div class="col-lg-7 col-md-6 ">
+                        @*<div class="detail-box">*@
+                        <div class="heading_container">
+                            <h2>
+                                <span>
+                                    About
+                                </span>
+                            </h2>
+                        </div>
+                        <div class="mt-5">
+                            <p>
+                                The "Katzefet" ice cream parlor is the leading ice cream brand in Israel for the past decade, which is also gaining momentum in the world. This brand has been winning competitions in the field for ten years in a row and the hand is still outstretched.
+                                Many tourists who come to the country have already heard about our ice cream parlor so this is a great reason to open an accessible and convenient website for remote bookings all over the country even during the Corona period.
+                                In our ice cream parlor you will find an "amusement park" of flavors and sweet pleasure for the palate that can not be described in words, a large selection of cream ice creams, gourmet sorbet, fur ice creams and sugar-free ice creams.
+                                We specialize in making ice cream in a selection of special flavors and types, flavors made from 100% ice cream, including special decorations, unique dedications in a variety of flavors and sizes!
+                                The chain boasts a mehadrin kosher on behalf of the "Hatam Sofer" department - Bnei Brak for all its products.
+                            </p>
+                            <a href="https://en.wikipedia.org/wiki/Ice_cream">
+                                Read More
+                            </a>
+                            @*</div>*@
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6">
+                        <div class="mt-5">
+                            <div class="img-box">
+                                <img src="~/images/history_new.png" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- end about section -->
+    <!-- shop section -->
+    <section class="shop_section layout_padding">
+        <div class="container">
+            <h2>
+                Best Ice Cream Flavours <br>
+                In <br>
+                Shop
+            </h2>
+            <p>
+                A variety of special, delicious and summery flavors in crazy specials in elegant kosher even without sugar.
+            </p>
+            <a asp-controller="Home" asp-action="Icecreams">
+                see flavors
+            </a>
+        </div>
+    </section>
+
+    <!-- end shop section -->
+  
+    <!-- client section -->
+
+    <section class="client_section layout_padding-bottom">
+        <div class="bg-img">
+            <img src="images/client-bg.png" alt="">
+        </div>
+        <div class="container">
+            <div class="heading_container">
+                <h2>
+                    <span>
+                        what is says our customer
+                    </span>
+                </h2>
+            </div>
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="box">
+                                    <div class="img-box">
+                                        <img src="images/client-1.png" alt="">
+                                    </div>
+                                    <div class="detail-box">
+                                        <h6>
+                                            <span>
+                                                Eiusmod
+                                            </span>
+                                            <img src="images/quote.png" alt="">
+                                        </h6>
+                                        <p>
+                                            Thank you very much for a convenient and beautiful website.<br />
+                                            Your ice creams are very tasty, I ordered for my daughter's birthday and everyone really enjoyed it.<br />
+                                            Waiting for the next event!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="box">
+                                    <div class="img-box">
+                                        <img src="images/client-2.png" alt="">
+                                    </div>
+                                    <div class="detail-box">
+                                        <h6>
+                                            <span>
+                                                Tempor
+                                            </span>
+                                            <img src="images/quote.png" alt="">
+                                        </h6>
+                                        <p>
+                                            I ordered today from the site, and really enjoyed it. <br />
+                                            The delivery arrived quickly and the ice creams are very tasty thank you very much.
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="box">
+                                    <div class="img-box">
+                                        <img src="images/client-1.png" alt="">
+                                    </div>
+                                    <div class="detail-box">
+                                        <h6>
+                                            <span>
+                                                Eiusmod
+                                            </span>
+                                            <img src="images/quote.png" alt="">
+                                        </h6>
+                                        <p>
+                                            Thank you very much for a convenient and beautiful website.<br />
+                                            Your ice creams are very tasty, I ordered for my daughter's birthday and everyone really enjoyed it.<br />
+                                            Waiting for the next event!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="box">
+                                    <div class="img-box">
+                                        <img src="images/client-2.png" alt="">
+                                    </div>
+                                    <div class="detail-box">
+                                        <h6>
+                                            <span>
+                                                Tempor
+                                            </span>
+                                            <img src="images/quote.png" alt="">
+                                        </h6>
+                                        <p>
+                                            I ordered today from the site, and really enjoyed it. <br />
+                                            The delivery arrived quickly and the ice creams are very tasty thank you very much.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="box">
+                                    <div class="img-box">
+                                        <img src="images/client-1.png" alt="">
+                                    </div>
+                                    <div class="detail-box">
+                                        <h6>
+                                            <span>
+                                                Eiusmod
+                                            </span>
+                                            <img src="images/quote.png" alt="">
+                                        </h6>
+                                        <p>
+                                            Thank you very much for a convenient and beautiful website.<br />
+                                            Your ice creams are very tasty, I ordered for my daughter's birthday and everyone really enjoyed it.<br />
+                                            Waiting for the next event!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="box">
+                                    <div class="img-box">
+                                        <img src="images/client-2.png" alt="">
+                                    </div>
+                                    <div class="detail-box">
+                                        <h6>
+                                            <span>
+                                                Tempor
+                                            </span>
+                                            <img src="images/quote.png" alt="">
+                                        </h6>
+                                        <p>
+                                            I ordered today from the site, and really enjoyed it. <br />
+                                            The delivery arrived quickly and the ice creams are very tasty thank you very much.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel_btn-container">
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- end client section -->
+    <!-- contact section -->
+    <section class="contact_section layout_padding">
+        <div class="container">
+            <div class="heading_container">
+                <h2>
+                    <span>
+                        Request A Call Back
+                    </span>
+                </h2>
+            </div>
+            <div class="layout_padding">
+                <div class="row">
+                    <div class="col-md-6 ">
+                        <form action="">
+                            <div class="contact_form-container">
+                                <div>
+                                    <div>
+                                        <input type="text" placeholder="Name" />
+                                    </div>
+                                    <div>
+                                        <input type="email" placeholder="Email" />
+                                    </div>
+                                    <div>
+                                        <input type="text" placeholder="Phone Number" />
+                                    </div>
+                                    <div>
+                                        <input type="text" placeholder="Message" />
+                                    </div>
+                                    <div class="mt-5">
+                                        <button type="submit" style="background-color: #ad927e; font-size:large">
+                                            Send
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="map_container">
+                            <div class="map-responsive">
+                                <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=Azrieli+Mall+Tel+Aviv+Israel" width="600" height="300" frameborder="0" style="border:0; width: 100%; height:100%" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end contact section -->
+    <!-- offer section -->
+
+    <div class="offer_section">
+        <div class="container">
+            <div class="offer_container">
+                <div class="btn-box">
+                    <a asp-controller="Orders" asp-action="Create">Buy Now</a>
+                </div>
+                <div class="detail-box">
+                    <h2>
+                        <span>
+                            50%
+                        </span>
+                        Offer on Every Ice Cream
+                    </h2>
+                </div>
+                <div class="img-box">
+                    <img src="images/offer-img.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- end offer section -->
+
+
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
 </div>
+
+

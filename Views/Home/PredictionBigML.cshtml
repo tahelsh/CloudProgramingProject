@@ -11,68 +11,93 @@
 }
 
 @model project.Models.BigML
-<h1>Prediction</h1>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/Home.css" />
+</head>
+
+<!--<h1>Prediction</h1>-->
 @* style="color: lightpink; text-align: center; font-size: 35px; -webkit-text-stroke: 1px black; font-family: Stencil Std, fantasy; margin:8px " *@
-<h4>Fill in the details and find out what ice cream flavor you will be buying</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<!--<h4>Fill in the details and find out what ice cream flavor you will be buying</h4>
+<hr />-->
 
-        <form asp-action="prediction">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="city" class="control-label"></label>
-                @*<input asp-for="city" class="form-control" />*@
-                <select asp-for="city" class="form-control">
-                    <option value="בני ברק"> בני ברק</option>
-                    <option value="תל אביב">תל אביב</option>
-                    <option value="ירושלים">ירושלים</option>
-                    <option value="פתח תקווה">פתח תקווה</option>
-                    <option value="אלעד">אלעד</option>
-                </select>
-                <span asp-validation-for="city" class="text-danger"></span>
+<section class="contact_section layout_padding">
+    @*<div class="bg-img">
+            <img src="~/images/contact-bg.png" alt="">
+        </div>*@
+    <div class="container">
+        <div class="heading_container">
+            <div class="row">
+                <h2>
+                    <span>
+                        Prediction
+                    </span>
+                </h2>
             </div>
-            <div class="form-group">
-                <label asp-for="season" class="control-label"></label>
-                @*<input asp-for="season" class="form-control" />*@
-                <select asp-for="season" class="form-control">
-                    <option value="summer">קיץ</option>
-                    <option value="winter">חורף</option>
-                    <option value="Autumn">סתיו</option>
-                    <option value="Spring">אביב</option>
-                </select>
-                <span asp-validation-for="season" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="feelslike" class="control-label"></label>
-                <input asp-for="feelslike" class="form-control" />
-                <span asp-validation-for="feelslike" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="humidity" class="control-label"></label>
-                <input asp-for="humidity" class="form-control" />
-                <span asp-validation-for="humidity" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="weekday" class="control-label"></label>
-                @*<input asp-for="weekday" class="form-control" />*@
-                <select asp-for="weekday" class="form-control">
-                    <option value="Sunday">ראשון</option>
-                    <option value="Monday">שני</option>
-                    <option value="Tuesday">שלישי</option>
-                    <option value="Wednesday">רביעי</option>
-                    <option value="Thursday">חמישי</option>
-                    <option value="Friday">שישי</option>
-                </select>
-                <span asp-validation-for="weekday" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" asp-controller="Home" asp-action="Prediction" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
+        <div class="layout_padding">
+            <h4>Fill in the details and find out what ice cream flavor you will be buying</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <form asp-action="prediction">
+                        <div class="contact_form-container">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                @*<label asp-for="city" class="control-label"></label>*@
+                                @*<input asp-for="city" class="form-control" />*@
+                                <select asp-for="city" class="form-control">
+                                    <option value="בני ברק"> בני ברק</option>
+                                    <option value="תל אביב">תל אביב</option>
+                                    <option value="ירושלים">ירושלים</option>
+                                    <option value="פתח תקווה">פתח תקווה</option>
+                                    <option value="אלעד">אלעד</option>
+                                </select>
+                                <span asp-validation-for="city" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                @*<label asp-for="season" class="control-label"></label>*@
+                                @*<input asp-for="season" class="form-control" />*@
+                                <select asp-for="season" class="form-control">
+                                    <option value="summer">קיץ</option>
+                                    <option value="winter">חורף</option>
+                                    <option value="Autumn">סתיו</option>
+                                    <option value="Spring">אביב</option>
+                                </select>
+                                <span asp-validation-for="season" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                @*<label asp-for="feelslike" class="control-label"></label>*@
+                                <input asp-for="feelslike" class="form-control" placeholder="feelslike" />
+                                <span asp-validation-for="feelslike" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                @*<label asp-for="humidity" class="control-label"></label>*@
+                                <input asp-for="humidity" class="form-control" placeholder="humidity" />
+                                <span asp-validation-for="humidity" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                @*<label asp-for="weekday" class="control-label"></label>*@
+                                @*<input asp-for="weekday" class="form-control" />*@
+                                <select asp-for="weekday" class="form-control">
+                                    <option value="Sunday">ראשון</option>
+                                    <option value="Monday">שני</option>
+                                    <option value="Tuesday">שלישי</option>
+                                    <option value="Wednesday">רביעי</option>
+                                    <option value="Thursday">חמישי</option>
+                                    <option value="Friday">שישי</option>
+                                </select>
+                                <span asp-validation-for="weekday" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" asp-controller="Home" asp-action="Prediction" style="background-color: #ad927e; font-size:large" class="btn btn-primary" />
+                            </div>
+                        </div>
+                    </form>
 
-        @*<img src="https://cdn-images-1.medium.com/max/1600/1*IuARg0qP2dxyRQCDpw_KLw.gif" />*@
-        <h2>@ViewBag.text </h2>
+                    @*<img src="https://cdn-images-1.medium.com/max/1600/1*IuARg0qP2dxyRQCDpw_KLw.gif" />*@
+                    <h2>@ViewBag.text </h2>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+</section>
 

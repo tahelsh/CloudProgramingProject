@@ -33,12 +33,19 @@ body {
   @include main-font;
   color: #0c0c0c;
   background-color: #ffffff;
+  
 }
+
+
 
 
 .layout_padding {
   padding: 75px 0;
 }
+
+/*.back {
+    background-image: url('../images/about-img.png');
+}*/
 
 .layout_padding2 {
   padding: 45px 0;
@@ -89,20 +96,20 @@ body {
 
 /*header section*/
 .hero_area {
-  height: 100vh;
-  position: relative;
-  background-color: #f4f4f4;
+    height: 100vh;
+    position: relative;
+    background-color: #f4f4f4;
 
-  &::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 40%;
-    height: 70%;
-    background-color: #e5e5d9;
-    z-index: 1;
-  }
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 40%;
+        height: 70%;
+        background-color: #f4f4f4; //#e5e5d9
+        z-index: 1;
+    }
 }
 
 .sub_page {
@@ -256,7 +263,7 @@ a:focus {
   .detail_box {
     h1 {
       font-size: 5rem;
-      margin-bottom: 30px;
+      margin-bottom: 0px;
     }
 
     a {
@@ -466,8 +473,8 @@ a:focus {
 
   h2 {
     font-weight: bold;
-    font-size: 2.5rem;
-    line-height: 4rem;
+    font-size: 1.5rem;
+    line-height: 3rem;
   }
 
   a {
@@ -689,44 +696,43 @@ a:focus {
 // offer section
 
 .offer_section {
-  background-color: #e5e5d9;
+    background-color: #f4f4f4;
 
-  .offer_container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
+    .offer_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
 
-    @include secondary-font();
+        @include secondary-font();
 
-    .btn-box {
-      a {
-        @include hero_btn($primary1, $white, 8px, 25px, $black);
-      }
-
-    }
-
-    .detail-box {
-      h2 {
-        color: #424242;
-
-        span {
-          font-weight: bold;
-          color: $black;
-          margin-right: 15px;
-          font-size: 1.2em;
+        .btn-box {
+            a {
+                @include hero_btn($primary1, $white, 8px, 25px, $black);
+            }
         }
-      }
-    }
 
-    .img-box {
-      margin-top: -95px;
+        .detail-box {
+            h2 {
+                color: #424242;
 
-      img {
-        width: 100%;
-      }
+                span {
+                    font-weight: bold;
+                    color: $black;
+                    margin-right: 15px;
+                    font-size: 1.2em;
+                }
+            }
+        }
+
+        .img-box {
+            margin-top: -95px;
+
+            img {
+                width: 100%;
+            }
+        }
     }
-  }
 }
 
 // end offer section
